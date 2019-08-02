@@ -8,11 +8,13 @@ vim configurations
 :version
 ```
 结果中python和python3的支持都是+。如果如果不是，可以根据所使用的发行版查找解决方法。
+
 2. 通过执行下列命令，下载plug.vim并放入~/.vim/autoload目录中：
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
+
 3. 在vim中执行:PlugInstall下载安装YouCompleteMe，下载过程较慢，可以使用如下方法设置代理：
 ```
 # 设置socks5代理
@@ -27,6 +29,7 @@ git config --global https.proxy https://<ip>:<port>
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+
 由于YouCompleteMe依赖较多，一般情况下这一步会卡住或者出错。
 4. 如果第2步出错，并提示：
 ```
@@ -37,12 +40,14 @@ File <file> does not exist; you probably forgot to run:
 ```
 git submodule update --init --recursive
 ```
+
 5. 执行完第3步之后，进入~/.vim/plugged/YouCompleteMe中，执行：
 ```
 python install.py --clang-completer
 或者
 python3 install.py --clang-completer
 ```
+
 6. YouCompleteMe依赖libclang8进行自动提示，安装脚本默认从网上下载编译好的二进制库，但是经常会遇到无法下载的问题：
 ```
 -- Found PythonLibs: /usr/lib64/libpython3.6m.so (found suitable version "3.6.8", minimum required is "3.5") 
