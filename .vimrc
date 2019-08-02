@@ -16,7 +16,7 @@ set laststatus=2         " 总是显示状态栏
 set number               " 开启行号显示
 set relativenumber       " 相对行号
 set cursorline           " 高亮显示当前行
-set whichwrap+=<,>,h,l   " 设置光标键跨行
+" set whichwrap+=<,>,h,l   " 设置光标键跨行
 set ttimeoutlen=0        " 设置<ESC>键响应时间
 " " set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
 
@@ -33,9 +33,10 @@ set tabstop=4            " 设置编辑时制表符占用空格数
 set shiftwidth=4         " 设置格式化时制表符占用空格数
 set softtabstop=4        " 设置4个空格为制表符
 set smarttab             " 在行和段开始处使用制表符
-set nowrap               " 禁止折行
+" set nowrap               " 禁止折行
+set wrap
 " set backspace=0         " 与set backspace=相同
-" set backspace=1         " 与set backspace=indent,eol相同
+" set backspacej1         " 与set backspace=indent,eol相同
 " set backspace=2         " 与set backspace=indent,eol,start相同
 set backspace=2          " 使用回车键正常处理indent,eol,start等
 set sidescroll=10        " 设置向右滚动字符数
