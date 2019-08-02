@@ -67,18 +67,18 @@ set autoread            " 文件在vim之外修改过，自动重新读入
 set autowrite           " 设置自动保存
 set confirm             " 在处理未保存或只读文件的时候，弹出确认
 
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " 编码设置
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 编码设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " 插件列表
-" " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 插件列表
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
@@ -96,6 +96,29 @@ noremap <LEADER>w :w<CR>
 noremap <LEADER>q :q<CR>
 noremap <LEADER>r :source $MYVIMRC<CR>
 noremap <LEADER>e :edit $MYVIMRC<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 分屏
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap sh :set nosplitright<CR>:vsplit<CR>
+noremap sl :set splitright<CR>:vsplit<CR>
+noremap sk :set nosplitbelow<CR>:split<CR>
+noremap sj :set splitbelow<CR>:split<CR>
+noremap <LEADER>h <C-w>h
+noremap <LEADER>j <C-w>j
+noremap <LEADER>k <C-w>k
+noremap <LEADER>l <C-w>l
+noremap <up> :resize -5<CR>
+noremap <down> :resize +5<CR>
+noremap <left> :vertical resize -5<CR>
+noremap <right> :vertical resize +5<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 分屏
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap te :tabe<CR>
+noremap t- :-tabnext<CR>
+noremap t= :+tabnext<CR>
 
 " colorscheme
 set background=dark
@@ -115,25 +138,6 @@ if !exists('g:airline_symbols')
     let g:airline_right_sep = ''
     let g:airline_right_alt_sep = ''
 
-" ctags
-set tags+=/usr/include/tags
-set tags+=~/.vim/systags
-set tags+=~/.vim/x86_64-linux-gnu-systags
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.','re![_a-zA-z0-9]'],
-  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s', 're!\[.*\]\s'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::','re![_a-zA-Z0-9]'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \ }
-let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&',']']
-
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_error_symbol = '>'
@@ -141,6 +145,8 @@ let g:ycm_warning_symbol = '*'
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
+let g:ycm_autoclose_preview_window_after_completion=0
+let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -152,10 +158,11 @@ nnoremap <leader>ff :YcmCompleter FixIt<cr>
 
 " nerdtree
 " map <silent> <leader>n :NERDTreeToggle<cr>
-map <leader>n :NERDTreeToggle<cr>
+map <LEADER>f :NERDTreeToggle<cr>
 let g:nerdtree_tabs_open_on_gui_startup=0
 let NERDTreeKeepTreeInNewTab=2
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
+
