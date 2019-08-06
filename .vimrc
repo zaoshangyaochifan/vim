@@ -100,21 +100,21 @@ noremap <LEADER>e :edit $MYVIMRC<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 分屏
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap sh :set nosplitright<CR>:vsplit<CR>
-noremap sl :set splitright<CR>:vsplit<CR>
-noremap sk :set nosplitbelow<CR>:split<CR>
-noremap sj :set splitbelow<CR>:split<CR>
-noremap <LEADER>h <C-w>h
-noremap <LEADER>j <C-w>j
-noremap <LEADER>k <C-w>k
-noremap <LEADER>l <C-w>l
+noremap <LEADER>h :set nosplitright<CR>:vsplit<CR>
+noremap <LEADER>l :set splitright<CR>:vsplit<CR>
+noremap <LEADER>k :set nosplitbelow<CR>:split<CR>
+noremap <LEADER>j :set splitbelow<CR>:split<CR>
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 noremap <up> :resize -5<CR>
 noremap <down> :resize +5<CR>
 noremap <left> :vertical resize -5<CR>
 noremap <right> :vertical resize +5<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 分屏
+" 多标签
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap te :tabe<CR>
 noremap t- :-tabnext<CR>
@@ -158,7 +158,7 @@ nnoremap <leader>ff :YcmCompleter FixIt<cr>
 
 " nerdtree
 " map <silent> <leader>n :NERDTreeToggle<cr>
-map <LEADER>f :NERDTreeToggle<cr>
+map <LEADER>t :NERDTreeToggle<cr>
 let g:nerdtree_tabs_open_on_gui_startup=0
 let NERDTreeKeepTreeInNewTab=2
 let NERDTreeChDirMode=0

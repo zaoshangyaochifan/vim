@@ -35,7 +35,14 @@ git config --global --unset https.proxy
 
 由于YouCompleteMe依赖较多，一般情况下这一步会卡住或者出错。
 ###### 第四步
-如果第3步出错，并提示：
+安装jdk, nodejs/npm和golang：
+```
+sudo yum install java-1.8.0*
+sudo yum install golang golang-*
+sudo yum install nodejs
+```
+###### 第五步
+如果第三步出错，并提示：
 ```
 File <file> does not exist; you probably forgot to run:
     git submodule update --init --recursive
@@ -45,12 +52,12 @@ File <file> does not exist; you probably forgot to run:
 git submodule update --init --recursive
 ```
 
-###### 第五步
-执行完第4步之后，进入~/.vim/plugged/YouCompleteMe中，执行：
+###### 第六步
+执行完第五步之后，进入~/.vim/plugged/YouCompleteMe中，执行：
 ```
-python install.py --clang-completer
+python install.py --clang-completer --java-completer --go-completer --ts-completer
 或者
-python3 install.py --clang-completer
+python3 install.py --clang-completer --java-completer --go-completer --ts-completer
 ```
 
 ###### 第六步
@@ -69,6 +76,6 @@ CMake Error at ycm/CMakeLists.txt:107 (file):
 这时可以从https://dl.bintray.com/micbou/libclang/libclang-8.0.0-x86_64-unknown-linux-gnu.tar.bz2手动下载
 并放入.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/../clang_archives/libclang-8.0.0-x86_64-unknown-linux-gnu.tar.bz2目录下，再次执行：
 ```
-python(3) install.py --clang-completer
+python3 install.py --clang-completer --java-completer --go-completer --ts-completer
 ```
 就可以成功安装YouCompleteMe了。
