@@ -94,6 +94,7 @@ call plug#end()
 noremap s <nop>
 noremap <LEADER>w :w<CR>
 noremap <LEADER>q :q<CR>
+noremap <LEADER>x :x<CR>
 noremap <LEADER>r :source $MYVIMRC<CR>
 noremap <LEADER>e :edit $MYVIMRC<CR>
 
@@ -104,10 +105,10 @@ noremap <LEADER>h :set nosplitright<CR>:vsplit<CR>
 noremap <LEADER>l :set splitright<CR>:vsplit<CR>
 noremap <LEADER>k :set nosplitbelow<CR>:split<CR>
 noremap <LEADER>j :set splitbelow<CR>:split<CR>
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+" noremap <C-h> <C-w>h
+" noremap <C-j> <C-w>j
+" noremap <C-k> <C-w>k
+" noremap <C-l> <C-w>l
 noremap <up> :resize -5<CR>
 noremap <down> :resize +5<CR>
 noremap <left> :vertical resize -5<CR>
