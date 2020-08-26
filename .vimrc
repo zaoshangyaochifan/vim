@@ -5,6 +5,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 let mapleader = ","      " 定义<leader>键
@@ -57,14 +58,17 @@ noremap <down> :resize +5<CR>
 noremap <left> :vertical resize -5<CR>
 noremap <right> :vertical resize +5<CR>
 " 多标签
-noremap te :tabe<CR>
+noremap tn :tabe<CR>
 noremap t- :-tabnext<CR>
 noremap t= :+tabnext<CR>
 " colorscheme
-" set background=dark
+set background=dark
 " let g:onedark_termcolors=256
 " colorscheme gruvbox
-colorscheme mojave
+" colorscheme anderson
+" colorscheme mojave
+" colorscheme atom
+colorscheme PaperColor
 " airline
 let g:airline_theme="onedark"
  let g:airline_powerline_fonts = 1
