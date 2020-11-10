@@ -40,7 +40,8 @@ set autoread            " 文件在vim之外修改过，自动重新读入
 set autowrite           " 设置自动保存
 set confirm             " 在处理未保存或只读文件的时候，弹出确认
 set wildmenu            " vim自身命名行模式智能补全
-" set completeopt-=preview " 补全时不显示窗口，只显示补全列表
+set completeopt-=preview " 补全时不显示窗口，只显示补全列表
+set autoread            " 自动重新加载文件
 
 noremap s <nop>
 noremap <LEADER>w :w<CR>
