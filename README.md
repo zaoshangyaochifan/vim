@@ -3,6 +3,12 @@ vim configurations
 
 ## 使用[coc.nvim](https://github.com/neoclide/coc.nvim)进行代码提示和自动补全
 
+Install vim-plug:
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 Install extensions like:
 ```
 :CocInstall coc-json coc-tsserver
@@ -21,6 +27,12 @@ Or configure language server in coc-settings.json opened by :CocConfig, like:
   }
 }
 ```
+
+Install gopls:
+```
+go install golang.org/x/tools/gopls@latest
+```
+
 
 ## 使用clangd进行C/C++代码补全
 
